@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require('validator');
 
 const UsuarioSchema = new mongoose.Schema({
     nome: {
@@ -38,30 +39,35 @@ const UsuarioSchema = new mongoose.Schema({
     nota: {
         type: Number,
         required: true,
+        default: 0,
         min: 0,   // Valor mínimo
         max: 10   // Valor máximo, por exemplo
     },
     nota_comunicacao: {
         type: Number,
         required: true,
+        default: 0,
         min: 0,   // Valor mínimo
         max: 10   // Valor máximo, por exemplo
     }, 
     nota_agilidade: {
         type: Number,
         required: true,
+        default: 0,
         min: 0,   // Valor mínimo
         max: 10   // Valor máximo, por exemplo
     }, 
     nota_equipe: {
         type: Number,
         required: true,
+        default: 0,
         min: 0,   // Valor mínimo
         max: 10   // Valor máximo, por exemplo
     }, 
     nota_assiduidade: {
         type: Number,
         required: true,
+        default: 0,
         min: 0,   // Valor mínimo
         max: 10   // Valor máximo, por exemplo
     }
