@@ -15,6 +15,7 @@ function renderView() {
     app.use(express.json());
     app.set('view engine', 'ejs');
     app.set('views', __dirname + '/src/view');
+    app.use(express.static("src/view/public"));
 }
   renderView();  
 

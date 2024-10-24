@@ -3,9 +3,14 @@ const router = express.Router();
 
 const {
         createAccount,
-        getLogin
+        loginAccount,
+        getloginAccount,
+        getCreateAccount,
+        gethome
     } = require("../src/controller/userController")
 
-router.route('/').get(getLogin).post(createAccount);
+router.route('/register').get(getCreateAccount).post(createAccount);
+router.route('/login').get(getloginAccount).post(loginAccount);
+router.route('/').get(gethome);
 
 module.exports = router;

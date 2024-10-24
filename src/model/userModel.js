@@ -6,8 +6,7 @@ const UsuarioSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        maxlength: 50,
-
+        maxlength: 50
     },
     email: {
         type: String,
@@ -21,12 +20,17 @@ const UsuarioSchema = new mongoose.Schema({
     senha: {
         type: String,
         required: true,
-        minlength: 8,  // comprimento mínimo para aumentar a segurança
+        minlength: 8  // comprimento mínimo para aumentar a segurança
     },
     descricao: {
         type: String,
         required: true,  // Pode ser obrigatório dependendo da aplicação
         maxlength: 150   // Limite de caracteres, se necessário
+    },
+    gestor: {
+        type: Boolean,
+        default: false,
+        required: true
     },
     departamento: {
         type: String,
