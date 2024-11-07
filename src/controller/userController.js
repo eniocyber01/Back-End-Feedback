@@ -13,6 +13,7 @@ const createAccount = async (req, res) => {
     }
 
     const usuario = await UsuarioSchema.create(user);
+    console.log(usuario);
 
     res.redirect("/login");
 }
@@ -22,13 +23,10 @@ const getCreateAccount = async (req, res) => {
 }
 
 const loginAccount = async (req, res) => {
-
     const usuario = await UsuarioSchema.findOne({email: req.body.email});
-    if(!usuario){
-        res.send("erro de credenciais");
-    }
-    res.redirect("/");
-
+    console.log(usuario);
+   
+    return res.redirect("/");
 }
 
 const getloginAccount = async (req, res) => {
@@ -37,7 +35,7 @@ const getloginAccount = async (req, res) => {
 
 const gethome = async (req, res) => {
     const gestores = await UsuarioSchema.find({gestor: true});
-    return res.render("home.ejs", {users: gestores});
+    return res.render("home.ejs", {users: gestores || {}});
 }
 
 module.exports = {createAccount, getCreateAccount, loginAccount, getloginAccount, gethome}
