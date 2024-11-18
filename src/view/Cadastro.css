@@ -1,0 +1,95 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral para o body */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(45deg, #1a1a1a, #4a6fa7, #fff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Animação do Gradiente */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+/* Título principal */
+h1 {
+    font-size: 2.4rem;
+    color: #4a6fa7;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Estilo dos campos de input */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botão de envio */
+button {
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    background-color: #4a6fa7;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #3b5681;
+    transform: translateY(-3px);
+}
+/* Estilo do link de login */
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #4a6fa7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

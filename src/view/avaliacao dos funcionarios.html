@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Avaliações dos Funcionários</title>
+    <link rel="stylesheet" href="gestores.css">
+</head>
+<body>
+    <div class="manager-container">
+        <h1>Painel de Avaliações dos Funcionários</h1>
+        
+        <!-- Área de Busca -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar funcionário..." onkeyup="searchEmployee()">
+        </div>
+
+        <!-- Painel por Setor -->
+        <div class="sector-panel">
+            <!-- Exemplo de funcionário: Recursos Humanos -->
+            <div class="employee-feedback" data-employee="João Silva Recursos Humanos">
+                <p><strong>Funcionário:</strong> João Silva</p>
+                <p><strong>Setor:</strong> Recursos Humanos</p>
+                <p><strong>Nota Geral:</strong> 4.5</p>
+                <ul>
+                    <li><strong>Comunicação:</strong> 4</li>
+                    <li><strong>Agilidade:</strong> 5</li>
+                    <li><strong>Trabalho em Equipe:</strong> 4</li>
+                    <li><strong>Trabalho Individual:</strong> 5</li>
+                </ul>
+                <button onclick="viewDetails('joao-silva')">Ver Detalhes</button>
+                <!-- Comentários -->
+                <div class="comments-section" id="joao-silva-comments" style="display: none;">
+                    <p><strong>Comentários:</strong></p>
+                    <ul>
+                        <li>"Ótima comunicação com a equipe!"</li>
+                        <li>"Precisa melhorar um pouco a agilidade em projetos grandes."</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Exemplo de funcionário: Tecnologia da Informação -->
+            <div class="employee-feedback" data-employee="Ana Souza Tecnologia da Informação">
+                <p><strong>Funcionário:</strong> Ana Souza</p>
+                <p><strong>Setor:</strong> Tecnologia da Informação</p>
+                <p><strong>Nota Geral:</strong> 4.9</p>
+                <ul>
+                    <li><strong>Comunicação:</strong> 5</li>
+                    <li><strong>Agilidade:</strong> 4.5</li>
+                    <li><strong>Trabalho em Equipe:</strong> 5</li>
+                    <li><strong>Trabalho Individual:</strong> 4.8</li>
+                </ul>
+                <button onclick="viewDetails('ana-souza')">Ver Detalhes</button>
+                <!-- Comentários -->
+                <div class="comments-section" id="ana-souza-comments" style="display: none;">
+                    <p><strong>Comentários:</strong></p>
+                    <ul>
+                        <li>"Sempre ajuda o time com novas ideias!"</li>
+                        <li>"Muito rápida nas entregas e boa individualmente."</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="gestores.js"></script>
+</body>
+</html>

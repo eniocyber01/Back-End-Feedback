@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- Cartão de funcionário com foto, nome, cargo e botão de avaliação -->
+    <div class="employee-card" employee-id="123">
+        <!-- Imagem do funcionário -->
+        <img src="foto-funcionario.jpg" alt="Foto do Funcionário" class="employee-photo">
+        
+        <!-- Informações do funcionário -->
+        <h2>Nome do Funcionário</h2>
+        <p class="role">Cargo: Desenvolvedor Front-End</p>
+        <p class="info">Departamento: Tecnologia da Informação</p>
+        <p class="info">Email: funcionario@empresa.com</p>
+        
+        <!-- Botão estilizado para avaliação -->
+        <button class="feedback-button" onclick="openFeedbackPage(123)">Dar Feedback</button>
+    </div>
+
+    <script src="perfil.js"></script>
+</body>
+</html>

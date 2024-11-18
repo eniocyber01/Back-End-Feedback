@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfis e Buscas de Feedback</title>
+    <link rel="stylesheet" href="PerfisBuscas.css">
+</head>
+<body>
+    <!-- Barra de navegação superior -->
+    <div class="top-bar">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar">
+        </div>
+    </div>
+
+    <!-- Container de perfis -->
+    <div class="profile-container">
+        <div class="profile-item">
+            <div class="profile-icon">👤</div>
+            <div class="profile-name">João Carlos Dias</div>
+        </div>
+        <!-- Perfis adicionais podem ser inseridos aqui -->
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="action-buttons">
+        <button id="addProfileBtn">Adicionar</button>
+        <button id="editProfileBtn">Alterar</button>
+    </div>
+
+    <!-- Modal Adicionar Perfil -->
+    <div id="addProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addProfileModal')">&times;</span>
+            <h2>Adicionar Perfil</h2>
+            <label>Nome Completo:<input type="text" id="addFullName"></label>
+            <label>Setor:<input type="text" id="addDepartment"></label>
+            <label>Função:<input type="text" id="addRole"></label>
+            <label>Sala:<input type="text" id="addRoom"></label>
+            <label>Responsável Direto:<input type="text" id="addManager"></label>
+            <button onclick="saveNewProfile()">Salvar</button>
+            <div class="error-message" id="addErrorMessage"></div>
+        </div>
+    </div>
+
+    <!-- Modal Editar Perfil -->
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editProfileModal')">&times;</span>
+            <h2>Editar Perfil</h2>
+            <label>Buscar Nome:<input type="text" id="searchEditName" placeholder="Buscar perfil"></label>
+            <label>Nome Completo:<input type="text" id="editFullName"></label>
+            <label>Setor:<input type="text" id="editDepartment"></label>
+            <label>Função:<input type="text" id="editRole"></label>
+            <label>Sala:<input type="text" id="editRoom"></label>
+            <label>Responsável Direto:<input type="text" id="editManager"></label>
+            <button onclick="saveEditedProfile()">Salvar</button>
+            <div class="error-message" id="editErrorMessage"></div>
+        </div>
+    </div>
+
+    <script src="perfisBusca.js"></script>
+</body>
+</html>

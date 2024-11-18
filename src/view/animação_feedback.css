@@ -1,0 +1,74 @@
+/* Resetando margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo geral do corpo */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6b6b, #f3a683, #f7b7a3);
+    animation: backgroundAnimation 5s ease-in-out infinite;
+    font-family: 'American Typewriter, serif';
+    text-shadow:#eeeeee
+}
+
+/* Estilo do container */
+.container {
+    text-align: center;
+}
+
+/* Estilo do título com animação de aparecimento das letras */
+.feedback-title {
+    font-size: 7rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 2s forwards, letterByLetter 3s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+/* Animação do fundo */
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(45deg, #06032a, #000000, #929292);
+    }
+    50% {
+        background: linear-gradient(45deg, #fffdfd, #454ba8, #000000);
+    }
+    100% {
+        background: linear-gradient(45deg, #00076b, #000000, #040223);
+    }
+}
+
+/* Animação das letras surgindo uma a uma */
+@keyframes letterByLetter {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0,3;
+    }
+    50%{
+        opacity: 0,7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animação do fade-in geral */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

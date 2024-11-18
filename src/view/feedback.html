@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Feedback</title>
+    <link rel="stylesheet" href="avaliacao.css">
+</head>
+<body>
+    <div class="feedback-container">
+        <h1>Avaliação de Feedback</h1>
+        
+        <!-- Categoria: Nota Geral -->
+        <div class="category">
+            <label for="nota-geral">Nota Geral</label>
+            <div class="stars">
+                <input type="radio" id="nota-geral-5" name="nota-geral" value="5"><label for="nota-geral-5">&#9733;</label>
+                <input type="radio" id="nota-geral-4" name="nota-geral" value="4"><label for="nota-geral-4">&#9733;</label>
+                <input type="radio" id="nota-geral-3" name="nota-geral" value="3"><label for="nota-geral-3">&#9733;</label>
+                <input type="radio" id="nota-geral-2" name="nota-geral" value="2"><label for="nota-geral-2">&#9733;</label>
+                <input type="radio" id="nota-geral-1" name="nota-geral" value="1"><label for="nota-geral-1">&#9733;</label>
+            </div>
+            <div class="rating-labels">
+                <span>Horrível</span>
+                <span style="float: right;">Maravilhoso</span>
+            </div>
+        </div>
+
+        <!-- Categoria: Comunicação -->
+        <div class="category">
+            <label for="comunicacao">Comunicação</label>
+            <div class="stars">
+                <input type="radio" id="comunicacao-5" name="comunicacao" value="5"><label for="comunicacao-5">&#9733;</label>
+                <input type="radio" id="comunicacao-4" name="comunicacao" value="4"><label for="comunicacao-4">&#9733;</label>
+                <input type="radio" id="comunicacao-3" name="comunicacao" value="3"><label for="comunicacao-3">&#9733;</label>
+                <input type="radio" id="comunicacao-2" name="comunicacao" value="2"><label for="comunicacao-2">&#9733;</label>
+                <input type="radio" id="comunicacao-1" name="comunicacao" value="1"><label for="comunicacao-1">&#9733;</label>
+            </div>
+            <div class="rating-labels">
+                <span>Horrível</span>
+                <span style="float: right;">Maravilhoso</span>
+            </div>
+        </div>
+
+        <!-- Categoria: Agilidade -->
+        <div class="category">
+            <label for="agilidade">Agilidade</label>
+            <div class="stars">
+                <input type="radio" id="agilidade-5" name="agilidade" value="5"><label for="agilidade-5">&#9733;</label>
+                <input type="radio" id="agilidade-4" name="agilidade" value="4"><label for="agilidade-4">&#9733;</label>
+                <input type="radio" id="agilidade-3" name="agilidade" value="3"><label for="agilidade-3">&#9733;</label>
+                <input type="radio" id="agilidade-2" name="agilidade" value="2"><label for="agilidade-2">&#9733;</label>
+                <input type="radio" id="agilidade-1" name="agilidade" value="1"><label for="agilidade-1">&#9733;</label>
+            </div>
+            <div class="rating-labels">
+                <span>Horrível</span>
+                <span style="float: right;">Maravilhoso</span>
+            </div>
+        </div>
+
+        <!-- Categoria: Trabalho em Equipe -->
+        <div class="category">
+            <label for="trabalho-em-equipe">Trabalho em Equipe</label>
+            <div class="stars">
+                <input type="radio" id="trabalho-em-equipe-5" name="trabalho-em-equipe" value="5"><label for="trabalho-em-equipe-5">&#9733;</label>
+                <input type="radio" id="trabalho-em-equipe-4" name="trabalho-em-equipe" value="4"><label for="trabalho-em-equipe-4">&#9733;</label>
+                <input type="radio" id="trabalho-em-equipe-3" name="trabalho-em-equipe" value="3"><label for="trabalho-em-equipe-3">&#9733;</label>
+                <input type="radio" id="trabalho-em-equipe-2" name="trabalho-em-equipe" value="2"><label for="trabalho-em-equipe-2">&#9733;</label>
+                <input type="radio" id="trabalho-em-equipe-1" name="trabalho-em-equipe" value="1"><label for="trabalho-em-equipe-1">&#9733;</label>
+            </div>
+            <div class="rating-labels">
+                <span>Horrível</span>
+                <span style="float: right;">Maravilhoso</span>
+            </div>
+        </div>
+
+        <!-- Categoria: Trabalho Individual -->
+        <div class="category">
+            <label for="trabalho-individual">Trabalho Individual</label>
+            <div class="stars">
+                <input type="radio" id="trabalho-individual-5" name="trabalho-individual" value="5"><label for="trabalho-individual-5">&#9733;</label>
+                <input type="radio" id="trabalho-individual-4" name="trabalho-individual" value="4"><label for="trabalho-individual-4">&#9733;</label>
+                <input type="radio" id="trabalho-individual-3" name="trabalho-individual" value="3"><label for="trabalho-individual-3">&#9733;</label>
+                <input type="radio" id="trabalho-individual-2" name="trabalho-individual" value="2"><label for="trabalho-individual-2">&#9733;</label>
+                <input type="radio" id="trabalho-individual-1" name="trabalho-individual" value="1"><label for="trabalho-individual-1">&#9733;</label>
+            </div>
+            <div class="rating-labels">
+                <span>Horrível</span>
+                <span style="float: right;">Maravilhoso</span>
+            </div>
+        </div>
+
+        <!-- Seção de Comentários -->
+        <div class="comments-section">
+            <label for="comentarios">Comentários:</label>
+            <textarea id="comentarios" placeholder="Explique o motivo de sua avaliação..."></textarea>
+        </div>
+
+        <button class="submit-button">Enviar</button>
+    </div>
+    
+    <script src="perfil.js"></script>
+
+</body>
+</html>
