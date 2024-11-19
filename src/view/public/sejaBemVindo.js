@@ -5,10 +5,10 @@ const funcionarioButton = document.getElementById("funcionario");
 // Adiciona eventos de clique nos botões
 gestorButton.addEventListener("click", function() {
     // Redireciona para a página de cadastro do Gestor
-    window.location.href = "FaçaSeuCadastro.html?role=gestor"; 
+    window.location.href = "singup?role=gestor"; 
 });
 
 funcionarioButton.addEventListener("click", function() {
     // Redireciona para a página de cadastro do Funcionário
-    window.location.href = "FaçaSeuCadastro.html?role=funcionario"; 
+    window.location.href = "singup?role=funcionario"; 
 });

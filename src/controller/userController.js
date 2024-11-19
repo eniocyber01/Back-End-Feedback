@@ -1,12 +1,12 @@
 const UsuarioSchema = require("../model/userModel");
 
 const createAccount = async (req, res) => {
-
+    console.log(req.body)
     const user = {
         nome: req.body.nome,
         email: req.body.email,
         senha: req.body.senha,
-        gestor: req.body.gestor == "gestor" ? true : false,
+        gestor: req.body.role == "gestor" ? true : false,
         descricao: req.body.descricao,
         departamento: req.body.departamento,
         sala: req.body.sala
@@ -19,23 +19,39 @@ const createAccount = async (req, res) => {
 }
 
 const getCreateAccount = async (req, res) => {
-    return res.render("singup.ejs");
+    return res.render("Cadastro.ejs");
+}
+
+const getUserId = async (req, res) => {
+    console.log(req.params.id)
+    const usuario = await UsuarioSchema.findById(req.params.id);
+    console.log(usuario)
+    return res.json(usuario);
+}
+
+const getPerfisBusca = async (req, res) => {
+    const usuario = await UsuarioSchema.find();
+    return res.render("perfisBusca.ejs", { users: usuario });
+}
+
+const getHome = async (req, res) => {
+    return res.render("sejaBemVindo.ejs");
 }
 
 const loginAccount = async (req, res) => {
-    const usuario = await UsuarioSchema.findOne({email: req.body.email});
-    console.log(usuario);
-   
-    return res.redirect("/");
+    const usuario = await UsuarioSchema.findOne({ email: req.body.email });
+    if (usuario) {
+        if (usuario.senha === req.body.senha) {
+            console.log(usuario);
+            return res.redirect("/perfisBusca");
+        }
+    }
+
+    return res.send("erro de login");
 }
 
 const getloginAccount = async (req, res) => {
     return res.render("login.ejs");
 }
 
-const gethome = async (req, res) => {
-    const gestores = await UsuarioSchema.find({gestor: true});
-    return res.render("home.ejs", {users: gestores || {}});
-}
-
-module.exports = {createAccount, getCreateAccount, loginAccount, getloginAccount, gethome}
+module.exports = { createAccount, getCreateAccount, loginAccount, getloginAccount, getHome, getPerfisBusca, getUserId }

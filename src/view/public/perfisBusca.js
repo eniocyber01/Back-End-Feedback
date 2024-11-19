@@ -115,9 +115,35 @@ function saveEditedProfile() {
     }
 }
 
-// Event listeners para os botões de adicionar e editar
-document.querySelector(".action-buttons button:nth-child(1)").addEventListener("click", () => openModal("addProfileModal"));
-document.querySelector(".action-buttons button:nth-child(2)").addEventListener("click", () => openModal("editProfileModal"));
-document.getElementById("saveNewProfileButton").addEventListener("click", saveNewProfile);
-document.getElementById("saveEditedProfileButton").addEventListener("click", saveEditedProfile);
-document.getElementById("searchEditButton").addEventListener("click", searchProfile);
+const addHTMLedit = async (id) => {
+
+    const response = await fetch(`http://localhost:8080/id/${id}`, {
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    const responseJson = await response.json();
+    var funcao;
+    if (responseJson.gestor == true) {
+        funcao = "Gestor"
+    } else {
+        funcao = "Funcionario"
+    }
+
+    const htmlEdit = `
+    <form class="modal-content" action="edit/${id}">
+    <span class="close" onclick="closeModal('editProfileModal')">&times;</span>
+    <h2>Editar Perfil</h2>
+    <label>Nome Completo:<input type="text" id="addFullName" value="${responseJson.nome}"></label>
+    <label>Setor:<input type="text" id="addDepartment" value="${responseJson.departamento}"></label>
+    <label>Função:<input type="text" id="addRole" value="${funcao}"></label>
+    <label>Sala:<input type="text" id="addRoom" value="${responseJson.sala}"></label>
+    <button onclick="saveNewProfile()">Salvar</button>
+    <div class="error-message" id="addErrorMessage"></div>
+    </form>
+    `
+    console.log(responseJson);
+    document.getElementById("editProfileModal").innerHTML = htmlEdit;
+}
+

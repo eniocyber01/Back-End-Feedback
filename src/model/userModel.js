@@ -24,7 +24,7 @@ const UsuarioSchema = new mongoose.Schema({
     },
     descricao: {
         type: String,
-        required: true,  // Pode ser obrigatório dependendo da aplicação
+        required: false,  // Pode ser obrigatório dependendo da aplicação
         maxlength: 150   // Limite de caracteres, se necessário
     },
     gestor: {
@@ -34,11 +34,11 @@ const UsuarioSchema = new mongoose.Schema({
     },
     departamento: {
         type: String,
-        required: true
+        required: false
     },
     sala: {
         type: String,
-        required: true
+        required: false
     },
     nota: {
         type: Number,

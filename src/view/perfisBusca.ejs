@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfis e Buscas de Feedback</title>
+    <link rel="stylesheet" href="perfisBusca.css">
+</head>
+
+<body>
+    <!-- Barra de navegação superior -->
+    <div class="top-bar">
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar">
+        </div>
+    </div>
+
+    <!-- Container de perfis -->
+    <div class="profile-container">
+        <% users.forEach(user=> { %>
+            <div class="profile-item">
+                <div class="profile-icon">👤 <% if(user.gestor==true){ %> Gestor<% }else{ %>Funcionário<%}%>
+                </div>
+                <div class="profile-name">
+                    <%= user.nome %>
+                </div>
+            </div>
+            <button id="editProfileBtn" onclick="addHTMLedit('<%= user.id %>')">Editar</button>
+            <button id="deleteProfileBtn">Excluir</button>
+            <% }) %>
+                <!-- Perfis adicionais podem ser inseridos aqui -->
+    </div>
+
+    <!-- Modal Adicionar Perfil -->
+    <div id="editProfileModal" class="modal">
+    </div>
+
+
+
+    <script src="perfisBusca.js"></script>
+</body>
+
+</html>

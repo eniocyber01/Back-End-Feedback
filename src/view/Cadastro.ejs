@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faça seu Cadastro</title>
-    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="Cadastro.css">
 </head>
 <body>
     <div class="container">
-        <h1>Faça seu Cadastro<span id="role"></span></h1>
+        <h1>Faça seu Cadastro <span id="role"></span></h1>
 
         <!-- Formulário de cadastro -->
         <form id="formCadastro">
@@ -26,23 +26,10 @@
 
         <!-- Link para página de login -->
         <div class="login-link">
-            <p>Já tem uma conta? <a href="login.html">Clique aqui para fazer login</a></p>
+            <p>Já tem uma conta? <a href="login">Clique aqui para fazer login</a></p>
         </div>
     </div>
 
-    <script src="cadastro.js"></script>
-    
-    <script>
-        // Script para identificar o tipo de usuário (Gestor ou Funcionário) baseado na URL
-        const role = new URLSearchParams(window.location.search).get("role");
-        const roleElement = document.getElementById("role");
-
-        // Atualiza o título com o tipo de usuário
-        if (role === "gestor") {
-            roleElement.textContent = " - Gestor";
-        } else if (role === "funcionario") {
-            roleElement.textContent = " - Funcionário";
-        }
-    </script>
+    <script src="Cadastro.js"></script>
 </body>
 </html>

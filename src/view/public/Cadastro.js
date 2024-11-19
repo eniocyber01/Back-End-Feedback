@@ -11,7 +11,7 @@ if (role === 'gestor') {
 }
 
 // Função para processar o formulário
-document.getElementById('formCadastro').addEventListener('submit', function(event) {
+document.getElementById('formCadastro').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     // Coleta os dados do formulário
@@ -19,12 +19,21 @@ document.getElementById('formCadastro').addEventListener('submit', function(even
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
 
-    // Processa os dados ou envia para um servidor (aqui apenas exibimos no console)
-    console.log(`Cadastro do ${role}:`);
-    console.log(`Nome: ${nome}`);
-    console.log(`E-mail: ${email}`);
-    console.log(`Senha: ${senha}`);
+    const body = {
+        nome,
+        email,
+        senha,
+        role
+    }
+
+    const response = await fetch('http://localhost:8080/singup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body),
+    });
 
     // Se a validação for bem-sucedida, redireciona para a página de Perfis e Buscas de Feedback
-    window.location.href = "perfisBusca.html"; // Altere o caminho conforme necessário
+    window.location.href = "login"; // Altere o caminho conforme necessário
 });
