@@ -136,6 +136,7 @@ const addHTMLedit = async (id) => {
     <span class="close" onclick="closeModal('editProfileModal')">&times;</span>
     <h2>Editar Perfil</h2>
     <label>Nome Completo:<input type="text" id="addFullName" value="${responseJson.nome}"></label>
+    <label>Descrição:<input type="text" id="addFullName" value="${responseJson.descricao}"></label>
     <label>Setor:<input type="text" id="addDepartment" value="${responseJson.departamento}"></label>
     <label>Função:<input type="text" id="addRole" value="${funcao}"></label>
     <label>Sala:<input type="text" id="addRoom" value="${responseJson.sala}"></label>
@@ -143,7 +144,20 @@ const addHTMLedit = async (id) => {
     <div class="error-message" id="addErrorMessage"></div>
     </form>
     `
-    console.log(responseJson);
+    console.log(htmlEdit);
     document.getElementById("editProfileModal").innerHTML = htmlEdit;
+    document.getElementById("editProfileModal").style.display = "block";
 }
 
+const deleteUser = async (id) => {
+
+    const response = await fetch(`http://localhost:8080/delete/${id}`, {
+        method: 'get',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    });
+    const responseJson = await response.json();
+
+    window.location.reload();
+}

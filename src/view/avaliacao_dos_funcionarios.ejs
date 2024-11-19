@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Avaliações dos Funcionários</title>
+    <link rel="stylesheet" href="avaliacao_dos_funcionarios.css">
+</head>
+
+<body>
+    <div class="manager-container">
+        <h1>Painel de Avaliações dos Funcionários</h1>
+
+        <!-- Área de Busca -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar funcionário..." onkeyup="searchEmployee()">
+        </div>
+
+        <!-- Painel por Setor -->
+        <div class="sector-panel">
+            <!-- Exemplo de funcionário: Recursos Humanos -->
+            <% users.forEach(user=> { %>
+                <div class="employee-feedback" data-employee="<%= user.nome %>">
+                    <p><strong>Funcionário:</strong>
+                        <%= user.nome %>
+                    </p>
+                    <p><strong>Setor:</strong>
+                        <%= user.setor %>
+                    </p>
+                    <p><strong>Nota geral:</strong>
+                        <%= user.nota %>
+                    </p>
+                    <ul>
+                        <li><label>Comunicação:<input type="text" id="addRoom"
+                                    value="<%= user.nota_comunicacao %>"></label></li>
+
+                        <li><label>Agilidade:<input type="text" id="addRoom" value="<%= user.nota_agilidade %>"></label>
+                        </li>
+
+                        <li><label>Trabalho em Equipe:<input type="text" id="addRoom"
+                                    value="<%= user.nota_equipe %>"></label></li>
+
+                        <li><label>Trabalho em Assiduidade:<input type="text" id="addRoom" value="<%= user.nota_assiduidade %>"></label></li>
+                    </ul>
+                        <button id="salvar">Salvar nota</button>
+                </div>
+                <% }) %>
+
+        </div>
+
+        <script src="avaliacao_dos_funcionarios.js"></script>
+</body>
+
+</html>

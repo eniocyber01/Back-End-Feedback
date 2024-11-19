@@ -22,6 +22,16 @@ const getCreateAccount = async (req, res) => {
     return res.render("Cadastro.ejs");
 }
 
+const getAvaliacao = async (req, res) => {
+    const usuario = await UsuarioSchema.find();
+    return res.render("avaliacao_dos_funcionarios.ejs", { users: usuario });
+}
+
+const deleteByUser = async (req, res) => {
+    const usuario = await UsuarioSchema.findByIdAndDelete(req.params.id);
+    console.log(usuario);
+    return res.json(usuario);
+}
 const getUserId = async (req, res) => {
     console.log(req.params.id)
     const usuario = await UsuarioSchema.findById(req.params.id);
@@ -54,4 +64,4 @@ const getloginAccount = async (req, res) => {
     return res.render("login.ejs");
 }
 
-module.exports = { createAccount, getCreateAccount, loginAccount, getloginAccount, getHome, getPerfisBusca, getUserId }
+module.exports = { createAccount, getCreateAccount, loginAccount, getloginAccount, getHome, getPerfisBusca, getUserId, deleteByUser, getAvaliacao }

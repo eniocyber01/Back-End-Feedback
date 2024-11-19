@@ -27,11 +27,11 @@
                 </div>
             </div>
             <button id="editProfileBtn" onclick="addHTMLedit('<%= user.id %>')">Editar</button>
-            <button id="deleteProfileBtn">Excluir</button>
+            <button id="deleteProfileBtn" onclick="deleteUser('<%= user.id %>')">Excluir</button>
             <% }) %>
                 <!-- Perfis adicionais podem ser inseridos aqui -->
     </div>
-
+    <a href="http://localhost:8080/avaliacao">Mais detalhes e avaliação!!</a>
     <!-- Modal Adicionar Perfil -->
     <div id="editProfileModal" class="modal">
     </div>

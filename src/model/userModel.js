@@ -23,6 +23,7 @@ const UsuarioSchema = new mongoose.Schema({
         minlength: 8  // comprimento mínimo para aumentar a segurança
     },
     descricao: {
+        default: "Descriçao não foi cadastrada...",
         type: String,
         required: false,  // Pode ser obrigatório dependendo da aplicação
         maxlength: 150   // Limite de caracteres, se necessário
@@ -33,10 +34,12 @@ const UsuarioSchema = new mongoose.Schema({
         required: true
     },
     departamento: {
+        default: "Departamento não configurado...",
         type: String,
         required: false
     },
     sala: {
+        default: "Sala não configurada...",
         type: String,
         required: false
     },
